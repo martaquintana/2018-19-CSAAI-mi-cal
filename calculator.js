@@ -1,11 +1,13 @@
-function addcadena(cadena,display,number){
-  display.innerHTML= number;
-  cadena = cadena + display.innerHTML;
-  display.innerHTML = cadena;
-  console.log(cadena)
-  return cadena
+function operador(display){
+    this.valor='';
+    this.display=display;
+    this.inc=function(value){
+      this.valor+=value;
+      this.display.innerHTML =this.valor;
+    }
 }
-function main() {
+function main()
+{
     console.log("Que comienzen los juegos de Javascript!!");
     var cadena = '';
     var botom0 = document.getElementById('botom0');
@@ -19,36 +21,85 @@ function main() {
     var botom8 = document.getElementById('botom8');
     var botom9 = document.getElementById('botom9');
     var display= document.getElementById('display');
-    botom0.onclick = () => {
-      cadena = addcadena(cadena,display,"0");
-    }
-    botom1.onclick = () => {
-      cadena = addcadena(cadena,display,"1");
-    }
-    botom2.onclick = () => {
-      cadena = addcadena(cadena,display,"2");
-    }
-    botom3.onclick = () => {
-      cadena = addcadena(cadena,display,"3");
-    }
-    botom4.onclick = () => {
-      cadena = addcadena(cadena,display,"4");
-    }
-    botom5.onclick = () => {
-      cadena = addcadena(cadena,display,"5");
-    }
-    botom6.onclick = () => {
-      cadena = addcadena(cadena,display,"6");
-    }
-    botom7.onclick = () => {
-      cadena = addcadena(cadena,display,"7");
-    }
-    botom8.onclick = () => {
-      cadena = addcadena(cadena,display,"8");
-    }
-    botom9.onclick = () => {
-      cadena = addcadena(cadena,display,"9");
-    }
+    var mas = document.getElementById('mas');
+    var igual= document.getElementById('igual');
+    var ac = document.getElementById('ac');
 
+    var operador1 = new operador(display)
+    var operador2= new operador(display)
+    
+        botom0.onclick = () => {
+          operador1.inc(0);
+          console.log(operador1)
+        }
+        botom1.onclick = () => {
+          operador1.inc(1);
+        }
+        botom2.onclick = () => {
+          operador1.inc(2);
+        }
+        botom3.onclick = () => {
+          operador1.inc(3);
+        }
+        botom4.onclick = () => {
+          operador1.inc(4);
+        }
+        botom5.onclick = () => {
+          operador1.inc(5);
+        }
+        botom6.onclick = () => {
+          operador1.inc(6);
+        }
+        botom7.onclick = () => {
+          operador1.inc(7);
+        }
+        botom8.onclick = () => {
+          operador1.inc(8);
+        }
+        botom9.onclick = () => {
+          operador1.inc(9);
+        }
 
+    mas.onclick=()=>{
+          botom0.onclick = () => {
+            operador2.inc(0);
+            console.log(operador2)
+          }
+          botom1.onclick = () => {
+            operador2.inc(1);
+          }
+          botom2.onclick = () => {
+            operador2.inc(2);
+          }
+          botom3.onclick = () => {
+            operador2.inc(3);
+          }
+          botom4.onclick = () => {
+            operador2.inc(4);
+          }
+          botom5.onclick = () => {
+            operador2.inc(5);
+          }
+          botom6.onclick = () => {
+            operador2.inc(6);
+          }
+          botom7.onclick = () => {
+            operador2.inc(7);
+          }
+          botom8.onclick = () => {
+            operador2.inc(8);
+          }
+          botom9.onclick = () => {
+            operador2.inc(9);
+        }
+      }
+      igual.onclick=()=>{
+          var numero= (parseInt(operador1.valor) + parseInt(operador2.valor))
+           display.innerHTML= numero;
+           operador1.valor= numero;
+           operador2.valor= '';
+       }
+      ac.onclick=()=>{
+          document.location.reload();
+        }
 }
