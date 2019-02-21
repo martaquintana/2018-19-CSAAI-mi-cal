@@ -59,6 +59,7 @@ function main()
     var mas = document.getElementById('mas');
     var menos = document.getElementById('menos');
     var multiplica= document.getElementById('multiplica');
+    var divide= document.getElementById('divide');
     var igual= document.getElementById('igual');
     var ac = document.getElementById('ac');
 
@@ -80,7 +81,12 @@ function main()
           cadena[1] = "x"
           numero(operador2);
     }
-    
+    divide.onclick =()=>{
+          cadena [0] = operador1.valor;
+          cadena[1] = "/"
+          numero(operador2);
+    }
+
 
     igual.onclick=()=>{
         if(cadena[0]==""){
@@ -101,6 +107,12 @@ function main()
         }
         if(cadena[1] == 'x'){
             var numero= (parseInt(cadena[0]) * parseInt(cadena[2]))
+            display.innerHTML= numero;
+            operador1.valor= numero;
+            operador2.valor= '';
+        }
+        if(cadena[1] == '/'){
+            var numero= (parseInt(cadena[0]) / parseInt(cadena[2]))
             display.innerHTML= numero;
             operador1.valor= numero;
             operador2.valor= '';
