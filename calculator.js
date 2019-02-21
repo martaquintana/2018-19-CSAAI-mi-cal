@@ -41,6 +41,7 @@ function numero(operador){
     }
 }
 
+
 function main()
 {
     console.log("Que comienzen los juegos de Javascript!!");
@@ -87,37 +88,76 @@ function main()
           numero(operador2);
     }
 
-
     igual.onclick=()=>{
-        if(cadena[0]==""){
-            cadena[0]='0';}
+      console.log(cadena)
+        if(cadena[0]=="" ){
+            cadena[0]='0';
+        }
         cadena[2]= operador2.valor;
-        console.log(cadena)
         if(cadena[1] == '+'){
-            var numero= (parseInt(cadena[0]) + parseInt(cadena[2]))
+            var numero= (parseFloat(cadena[0]) + parseFloat(cadena[2]))
+            console.log(numero);
+            if ( numero ){
             display.innerHTML= numero;
             operador1.valor= numero;
+            cadena[0]=numero;
+            cadena[2]='0';
             operador2.valor= '';
+            console.log(cadena)
+            }
+          console.log(cadena);
         }
         if(cadena[1] == '-'){
-            var numero= (parseInt(cadena[0]) - parseInt(cadena[2]))
-            display.innerHTML= numero;
-            operador1.valor= numero;
-            operador2.valor= '';
+          var numero= (parseFloat(cadena[0]) - parseFloat(cadena[2]))
+          console.log(numero);
+          if ( numero ){
+          display.innerHTML= numero;
+          operador1.valor= numero;
+          cadena[0]=numero;
+          cadena[2]='0';
+          operador2.valor= '';
+          console.log(cadena)
+          }
+        console.log(cadena);
         }
         if(cadena[1] == 'x'){
-            var numero= (parseInt(cadena[0]) * parseInt(cadena[2]))
-            display.innerHTML= numero;
-            operador1.valor= numero;
-            operador2.valor= '';
+          var numero= (parseFloat(cadena[0]) * parseFloat(cadena[2]))
+          console.log(numero);
+          if ( numero ){
+          display.innerHTML= numero;
+          operador1.valor= numero;
+          cadena[0]=numero;
+          cadena[2]='0';
+          operador2.valor= '';
+          console.log(cadena)
+        }else{
+          numero='0';
+          display.innerHTML= numero;
+          operador1.valor= numero;
+          cadena[0]=numero;
+          cadena[2]='0';
+          operador2.valor= '';
+          console.log(cadena)
+        console.log(cadena);
         }
+      }
         if(cadena[1] == '/'){
-            var numero= (parseInt(cadena[0]) / parseInt(cadena[2]))
-            display.innerHTML= numero;
-            operador1.valor= numero;
-            operador2.valor= '';
+          if(operador2.valor != "0"){
+              var numero= (parseFloat(cadena[0]) / parseFloat(cadena[2]))
+              console.log(numero);
+              display.innerHTML= numero;
+              operador1.valor= numero;
+              cadena[0]=numero;
+              cadena[2]='0';
+              operador2.valor= '';
+
+          }else{
+            console.log(cadena);
+            display.innerHTML= "Divide por otro numero";
+          }
         }
-       }
+      }
+
     ac.onclick=()=>{
         document.location.reload();
     }
