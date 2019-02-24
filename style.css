@@ -46,7 +46,7 @@ button:active {
   }
 
 div.calculadora{
-    padding-top: 10px;
+    padding:2%;
     padding-bottom: 250px;
     background-color: #3d84a8;
     border-radius: 20px 20px 20px 20px;
