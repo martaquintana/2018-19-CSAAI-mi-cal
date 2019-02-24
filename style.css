@@ -1,7 +1,8 @@
 body {
     background-color: #48466d;
-    padding: 10px;
-    margin-right:50%;
+    padding: inherit;
+    margin-right:54%;
+    margin-left: 70px;
   }
 
 button{
@@ -27,11 +28,6 @@ button:active {
 
 #numeros{
     float: left;
-
-}
-#operadores{
-  float: right;
-  padding-right: 1%;
 }
 
 #display{
@@ -47,7 +43,7 @@ button:active {
 
 div.calculadora{
     padding-top: 10px;
-    padding-bottom: 250px;
+    padding-bottom: 60px;
     background-color: #3d84a8;
     border-radius: 20px 20px 20px 20px;
     border: 5px solid #3d84a8;
