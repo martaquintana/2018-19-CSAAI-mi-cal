@@ -1,7 +1,7 @@
 body {
     background-color: #48466d;
     padding: 10px;
-    margin-right:50%;
+    margin-right:55%;
   }
 
 button{
@@ -27,9 +27,6 @@ button:active {
 
 #numeros{
     float: left;
-  }
-#operadores{
-    margin-right: 10px;
   }
 
 #display{
